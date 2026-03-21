@@ -1,17 +1,17 @@
 # Blender Scripts
 
-A collection of Blender addons for advanced mesh editing in Blender 5.x.
+Advanced mesh editing tool for Blender 5.x.
 
-*Created with AI-Monkey*
+*Created with AI-Monkey 🐵🤖*
 
-## Addons
+## Addon
 
-### 1. Radial Symmetry Tool (v0.1.0)
-**Advanced tool for working with radial symmetry and batch assigning vertices to vertex groups**
+### Radial Symmetry Tool (v0.1.0)
+**Advanced tool for radial symmetry operations and batch vertex group assignment**
 
 #### Features:
 - **Select by Symmetry** — select vertices with radial symmetry around a chosen axis
-- **Assign to Groups** — assign selected vertices to named vertex groups with custom division
+- **Assign to Groups** — divide selected vertices and assign them to named vertex groups
 - **Select & Assign** — combined operation of selection and assignment in one action
 
 #### Parameters:
@@ -32,31 +32,16 @@ A collection of Blender addons for advanced mesh editing in Blender 5.x.
 3. Set parameters in the tool panel
 4. Press the desired operation button
 
-### 2. Vertex Group Batch Assign (v1.0.0)
-**Tool for batch assigning selected vertices to multiple named groups**
-
-#### Features:
-- Divide selected vertices into N equal groups
-- Automatically create groups with custom naming
-- Remove vertices from groups
-- Delete entire groups
-
-#### Parameters:
-- Group Name — group name for deletion operations
-- Prefix — prefix for group names
-- Divisions — number of groups to divide into
-- Postfix — suffix for group names
-
 ## Installation
 
-1. Copy addon files to your Blender addons folder:
+1. Copy `radial_symmetry_tool.py` to your Blender addons folder:
    - Windows: `C:\Users\[YourUsername]\AppData\Roaming\Blender Foundation\Blender\5.1\scripts\addons\`
    - macOS: `/Users/[YourUsername]/Library/Application Support/Blender/5.1/scripts/addons/`
    - Linux: `/home/[YourUsername]/.config/blender/5.1/scripts/addons/`
 
 2. Open Blender → Preferences → Extensions
 
-3. Find the addons and enable them
+3. Find "Radial Symmetry Tool" and enable it
 
 ## Requirements
 
