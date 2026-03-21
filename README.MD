@@ -9,6 +9,10 @@ Advanced mesh editing tool for Blender 5.x.
 ### Radial Symmetry Tool (v0.1.0)
 **Advanced tool for radial symmetry operations and batch vertex group assignment**
 
+Useful for octopus-like bones binding and may be for other things.
+
+![Radial Symmetry Tool](docs/img/0.png)
+
 #### Features:
 - **Select by Symmetry** — select vertices with radial symmetry around a chosen axis
 - **Assign to Groups** — divide selected vertices and assign them to named vertex groups
