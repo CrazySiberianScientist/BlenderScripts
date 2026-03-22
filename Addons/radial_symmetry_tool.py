@@ -200,21 +200,22 @@ class MESH_OT_radial_select_and_assign(Operator):
         # Упорядоченный список выделенных вершин в порядке выделения
         ordered_selected = []
         
+        # Шаг 1: добавляем все исходные вершины
         for sel_v in selected_initial:
-            # Добавляем начальную выделенную вершину
             ordered_selected.append(sel_v.index)
-            # Сохраняем порядок вершин в свойство сцены для использования в других операциях
             context.scene.radial_selected_order = ','.join(map(str, ordered_selected))
-            
-            sel_pos = sel_v.co
-            
-            u_sel = sel_pos[u]
-            v_sel = sel_pos[v]
-            radius = math.sqrt(u_sel**2 + v_sel**2)
-            angle_sel = math.atan2(v_sel, u_sel)
-            main_coord = sel_pos[axis_idx_main]
-            
-            for div in range(1, number):
+        
+        # Шаг 2: для каждого деления ищем соответствующие вершины
+        for div in range(1, number):
+            for sel_v in selected_initial:
+                sel_pos = sel_v.co
+                
+                u_sel = sel_pos[u]
+                v_sel = sel_pos[v]
+                radius = math.sqrt(u_sel**2 + v_sel**2)
+                angle_sel = math.atan2(v_sel, u_sel)
+                main_coord = sel_pos[axis_idx_main]
+                
                 target_angle = angle_sel + angle_step * div
                 
                 u_target = radius * math.cos(target_angle)
@@ -230,9 +231,7 @@ class MESH_OT_radial_select_and_assign(Operator):
                         abs(v_pos[v] - v_target) <= tol and
                         abs(v_pos[axis_idx_main] - main_coord) <= tol):
                         v_mesh.select = True
-                        # Добавляем найденную вершину в упорядоченный список
                         ordered_selected.append(v_mesh.index)
-                        # Обновляем сохранённый порядок
                         context.scene.radial_selected_order = ','.join(map(str, ordered_selected))
                         break
         
